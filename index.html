@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f0d0a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f9f7f4" media="(prefers-color-scheme: light)" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <title>Petrichor | Premium Geological Treasures & Rare Stones</title>
+    <meta name="description" content="Discover Earth's most extraordinary geological treasures. Each stone carries millions of years of history, authenticated and curated for collectors." />
+    
+    <meta property="og:title" content="Petrichor | Premium Geological Treasures" />
+    <meta property="og:description" content="Curating Earth's most extraordinary geological specimens since ancient times." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Petrichor" />
+    <meta property="og:locale" content="en_US" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Petrichor | Premium Geological Treasures" />
+    <meta name="twitter:description" content="Discover Earth's most extraordinary geological treasures." />
+
+    <!-- System theme detection - prevents flash -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

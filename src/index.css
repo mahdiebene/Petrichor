@@ -1,0 +1,386 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Premium Rock Commerce Design System */
+
+@layer base {
+  :root {
+    /* Light mode - Elegant warm cream/stone palette */
+    --background: 40 30% 97%;
+    --foreground: 25 20% 15%;
+
+    --card: 40 25% 99%;
+    --card-foreground: 25 20% 15%;
+
+    --popover: 40 30% 99%;
+    --popover-foreground: 25 20% 15%;
+
+    --primary: 32 65% 45%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 35 15% 92%;
+    --secondary-foreground: 25 20% 25%;
+
+    --muted: 35 12% 90%;
+    --muted-foreground: 25 10% 45%;
+
+    --accent: 28 55% 40%;
+    --accent-foreground: 40 30% 98%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 15% 85%;
+    --input: 35 15% 90%;
+    --ring: 32 65% 45%;
+
+    --radius: 0.5rem;
+
+    /* Premium custom tokens */
+    --gold: 32 65% 45%;
+    --gold-light: 38 60% 60%;
+    --copper: 25 55% 40%;
+    --stone: 30 8% 55%;
+    --earth: 25 15% 25%;
+    --cream: 40 30% 95%;
+    --obsidian: 25 15% 12%;
+
+    /* Enhanced Shadows for Light Mode */
+    --shadow-sm: 0 1px 2px 0 hsl(25 20% 15% / 0.04);
+    --shadow-md: 0 4px 6px -1px hsl(25 20% 15% / 0.06), 0 2px 4px -2px hsl(25 20% 15% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(25 20% 15% / 0.08), 0 4px 6px -4px hsl(25 20% 15% / 0.06);
+    --shadow-xl: 0 20px 25px -5px hsl(25 20% 15% / 0.1), 0 8px 10px -6px hsl(25 20% 15% / 0.08);
+    --shadow-2xl: 0 25px 50px -12px hsl(25 20% 15% / 0.2);
+    --shadow-gold: 0 4px 20px hsl(32 65% 45% / 0.2);
+    --shadow-elevated: 0 20px 40px hsl(25 20% 15% / 0.12), 0 8px 16px hsl(25 20% 15% / 0.08);
+    --shadow-card: 0 2px 8px hsl(25 20% 15% / 0.06), 0 4px 16px hsl(25 20% 15% / 0.04);
+    --shadow-inner: inset 0 2px 4px 0 hsl(25 20% 15% / 0.04);
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(32 65% 45%), hsl(25 55% 40%));
+    --gradient-subtle: linear-gradient(180deg, hsl(40 30% 99%), hsl(40 25% 96%));
+    --gradient-shimmer: linear-gradient(90deg, transparent, hsl(32 65% 45% / 0.08), transparent);
+
+    /* Sidebar */
+    --sidebar-background: 40 25% 98%;
+    --sidebar-foreground: 25 20% 15%;
+    --sidebar-primary: 32 65% 45%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 35 15% 94%;
+    --sidebar-accent-foreground: 25 20% 15%;
+    --sidebar-border: 35 15% 88%;
+    --sidebar-ring: 32 65% 45%;
+  }
+
+  .dark {
+    /* Dark mode - Rich obsidian with warm metallic accents */
+    --background: 25 15% 8%;
+    --foreground: 38 25% 92%;
+
+    --card: 25 12% 12%;
+    --card-foreground: 38 25% 92%;
+
+    --popover: 25 12% 10%;
+    --popover-foreground: 38 25% 92%;
+
+    --primary: 38 70% 55%;
+    --primary-foreground: 25 15% 8%;
+
+    --secondary: 25 10% 18%;
+    --secondary-foreground: 38 20% 85%;
+
+    --muted: 25 8% 16%;
+    --muted-foreground: 30 12% 55%;
+
+    --accent: 28 60% 48%;
+    --accent-foreground: 38 25% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 25 10% 20%;
+    --input: 25 10% 18%;
+    --ring: 38 70% 55%;
+
+    /* Premium custom tokens - Dark */
+    --gold: 38 70% 55%;
+    --gold-light: 40 65% 68%;
+    --copper: 28 60% 48%;
+    --stone: 30 6% 40%;
+    --earth: 25 12% 22%;
+    --cream: 38 25% 88%;
+    --obsidian: 25 15% 5%;
+
+    /* Enhanced Shadows for Dark Mode */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -2px hsl(0 0% 0% / 0.2);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.35), 0 4px 6px -4px hsl(0 0% 0% / 0.25);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.4), 0 8px 10px -6px hsl(0 0% 0% / 0.3);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.6);
+    --shadow-gold: 0 4px 25px hsl(38 70% 55% / 0.25);
+    --shadow-elevated: 0 20px 50px hsl(0 0% 0% / 0.5), 0 8px 20px hsl(0 0% 0% / 0.35);
+    --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.25), 0 8px 24px hsl(0 0% 0% / 0.2);
+    --shadow-inner: inset 0 2px 4px 0 hsl(0 0% 0% / 0.15);
+
+    /* Gradients - Dark */
+    --gradient-gold: linear-gradient(135deg, hsl(38 70% 55%), hsl(28 60% 48%));
+    --gradient-subtle: linear-gradient(180deg, hsl(25 12% 12%), hsl(25 12% 10%));
+    --gradient-shimmer: linear-gradient(90deg, transparent, hsl(38 70% 55% / 0.12), transparent);
+
+    /* Sidebar - Dark */
+    --sidebar-background: 25 12% 10%;
+    --sidebar-foreground: 38 25% 92%;
+    --sidebar-primary: 38 70% 55%;
+    --sidebar-primary-foreground: 25 15% 8%;
+    --sidebar-accent: 25 10% 16%;
+    --sidebar-accent-foreground: 38 25% 92%;
+    --sidebar-border: 25 10% 20%;
+    --sidebar-ring: 38 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Hide scrollbar utility */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Premium typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+
+  /* Noise texture overlay - subtle in light mode */
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    z-index: 9999;
+  }
+
+  .dark .noise-overlay {
+    opacity: 0.03;
+  }
+}
+
+@layer components {
+  /* Premium button styles */
+  .btn-premium {
+    @apply relative overflow-hidden bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium px-8 py-3 rounded-md transition-all duration-500;
+    box-shadow: var(--shadow-gold);
+  }
+
+  .btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shimmer);
+    transition: left 0.5s ease;
+  }
+
+  .btn-premium:hover::before {
+    left: 100%;
+  }
+
+  .btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .btn-ghost-gold {
+    @apply border border-primary/30 text-primary hover:bg-primary/10 rounded-md transition-all duration-300;
+  }
+
+  .btn-ghost-gold:hover {
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Enhanced Card styles with depth */
+  .card-premium {
+    @apply bg-card border border-border/60 rounded-lg overflow-hidden transition-all duration-500;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-premium:hover {
+    @apply border-primary/40;
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-6px);
+  }
+
+  /* Glass morphism card */
+  .card-glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/40 rounded-lg;
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Elevated section */
+  .section-elevated {
+    @apply bg-card border-y border-border/50;
+    box-shadow: var(--shadow-inner);
+  }
+
+  /* Container with depth */
+  .container-depth {
+    @apply bg-card/50 border border-border/30 rounded-xl p-6;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Text styles */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  /* Divider */
+  .divider-gold {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+  }
+
+  /* Shimmer animation */
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.08), transparent);
+    animation: shimmer 2.5s infinite;
+  }
+
+  @keyframes shimmer {
+    100% {
+      left: 150%;
+    }
+  }
+
+  /* Input enhancement */
+  .input-enhanced {
+    @apply transition-all duration-300;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .input-enhanced:focus {
+    box-shadow: var(--shadow-md), 0 0 0 2px hsl(var(--primary) / 0.2);
+  }
+
+  /* Badge with glow */
+  .badge-premium {
+    @apply bg-primary/15 text-primary border border-primary/25 px-3 py-1 rounded-full text-xs font-medium;
+    box-shadow: 0 0 12px hsl(var(--primary) / 0.15);
+  }
+}
+
+@layer utilities {
+  /* Shadow utilities */
+  .shadow-depth-sm {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-depth-md {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-depth-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-depth-xl {
+    box-shadow: var(--shadow-xl);
+  }
+
+  .shadow-depth-2xl {
+    box-shadow: var(--shadow-2xl);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-inner-depth {
+    box-shadow: var(--shadow-inner);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
