@@ -196,7 +196,7 @@ const Checkout = () => {
                   <div>
                     <h2 className="font-serif text-xl mb-4">Shipping Address</h2>
                     <div className="grid gap-4">
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <Label htmlFor="firstName">First Name</Label>
                           <Input
@@ -228,7 +228,7 @@ const Checkout = () => {
                           className="mt-1 bg-secondary border-border"
                         />
                       </div>
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <Label htmlFor="city">City</Label>
                           <Input
@@ -266,7 +266,7 @@ const Checkout = () => {
                   {/* Payment */}
                   <div>
                     <h2 className="font-serif text-xl mb-4">Payment</h2>
-                    <div className="p-6 bg-card rounded-sm border border-border">
+                    <div className="p-4 md:p-6 bg-card rounded-sm border border-border">
                       <div className="flex items-center gap-3 mb-4">
                         <CreditCard className="h-5 w-5 text-primary" />
                         <span className="font-medium">Credit Card</span>
@@ -281,7 +281,7 @@ const Checkout = () => {
                             className="mt-1 bg-secondary border-border"
                           />
                         </div>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
                             <Label htmlFor="expiry">Expiry Date</Label>
                             <Input
@@ -328,7 +328,7 @@ const Checkout = () => {
                 animate={{ opacity: 1, x: 0 }}
                 className="lg:sticky lg:top-24 h-fit"
               >
-                <div className="p-8 bg-card rounded-sm border border-border">
+                <div className="p-4 md:p-8 bg-card rounded-sm border border-border">
                   <h2 className="font-serif text-xl font-medium mb-6">
                     Order Summary
                   </h2>
