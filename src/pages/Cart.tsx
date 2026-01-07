@@ -50,19 +50,19 @@ const Cart = () => {
                 </Link>
               </motion.div>
             ) : (
-              <div className="grid lg:grid-cols-3 gap-12">
+              <div className="grid lg:grid-cols-3 gap-6 lg:gap-12">
                 {/* Cart Items */}
-                <div className="lg:col-span-2 space-y-6">
+                <div className="lg:col-span-2 space-y-4 md:space-y-6">
                   {items.map((item, index) => (
                     <motion.div
                       key={item.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex gap-6 p-6 bg-card rounded-sm border border-border"
+                      className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 sm:p-6 bg-card rounded-sm border border-border"
                     >
                       <Link to={`/product/${item.id}`} className="shrink-0">
-                        <div className="w-24 h-24 md:w-32 md:h-32 rounded-sm overflow-hidden bg-secondary">
+                        <div className="w-full sm:w-32 h-48 sm:h-32 rounded-sm overflow-hidden bg-secondary">
                           <img
                             src={item.image}
                             alt={item.name}
@@ -71,19 +71,26 @@ const Cart = () => {
                         </div>
                       </Link>
 
-                      <div className="flex-1 flex flex-col justify-between">
-                        <div>
-                          <Link to={`/product/${item.id}`}>
-                            <h3 className="font-serif text-lg font-medium hover:text-primary transition-colors">
-                              {item.name}
-                            </h3>
-                          </Link>
-                          <p className="text-muted-foreground text-sm">
-                            {item.origin}
-                          </p>
+                      <div className="flex-1 flex flex-col justify-between gap-4 sm:gap-0">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <Link to={`/product/${item.id}`}>
+                              <h3 className="font-serif text-lg font-medium hover:text-primary transition-colors">
+                                {item.name}
+                              </h3>
+                            </Link>
+                            <p className="text-muted-foreground text-sm">
+                              {item.origin}
+                            </p>
+                          </div>
+                          <div className="text-right sm:hidden">
+                            <p className="font-serif text-lg text-primary">
+                              ${(item.price * item.quantity).toLocaleString()}
+                            </p>
+                          </div>
                         </div>
 
-                        <div className="flex items-center justify-between mt-4">
+                        <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <Button
                               variant="outline"
@@ -121,7 +128,7 @@ const Cart = () => {
                         </div>
                       </div>
 
-                      <div className="text-right">
+                      <div className="text-right hidden sm:block">
                         <p className="font-serif text-lg text-primary">
                           ${(item.price * item.quantity).toLocaleString()}
                         </p>
@@ -136,7 +143,7 @@ const Cart = () => {
                   animate={{ opacity: 1, x: 0 }}
                   className="lg:sticky lg:top-24"
                 >
-                  <div className="p-8 bg-card rounded-sm border border-border">
+                  <div className="p-4 md:p-8 bg-card rounded-sm border border-border">
                     <h2 className="font-serif text-xl font-medium mb-6">
                       Order Summary
                     </h2>
